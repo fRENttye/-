@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чат-бот</title>
+
+    <link rel="stylesheet" href="styles.css">
+
     <meta charset="utf-8">
     <title>Главная страница</title>
     <meta name="description"
@@ -29,11 +35,59 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family&#x3D;Ubuntu&amp;subset&#x3D;all&amp;display&#x3D;swap">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family&#x3D;Open+Sans&amp;subset&#x3D;all&amp;display&#x3D;swap">
+
+        <style>
+.chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+</style>
+
 </head>
 
 
 
-<body class="sb-body sb-body_with-footer  font-ubuntu-opensans sb-content-size_m sb-buttons-border_round">
+<body>
+
+   <div class="chat-icon" id="chat-icon">💬</div>
+    <div class="chat-container" id="chat-container">
+        <div class="chat-header">
+            <span>Чат-бот</span>
+            <button id="close-button">✖</button>
+        </div>
+        <div class="chat-box" id="chat-box"></div>
+        <div class="input-container">
+            <input type="text" id="user-input" placeholder="Введите сообщение..." />
+            <button id="send-button">Отправить</button>
+        </div>
+    </div>
+    
+
+    <script src="asdsf.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="sb-body sb-body_with-footer font-ubuntu-opensans sb-content-size_m sb-buttons-border_round">
+  
 <div class="site-wrapper" tabindex="0">
                <section data-type="main" id="main" class="s-main-type-3 sb-block sb-block_fullscreen s-main-type-3_with-scroll-icon sb-text-white sb-align-center"><link
                             id="main-type-3"
@@ -103,9 +157,9 @@
                         <div class="sb-row sb-m-5-bottom sb-m-clear-bottom"><h2 class="sb-col_lg-10 sb-col_md-12 sb-col_sm-12 sb-col_xs-12 sb-font-h2 sb-font-title sb-m-12-bottom">QR code</h2> <div class="sb-col_lg-10 sb-col_md-12 sb-col_sm-12 sb-col_xs-12 sb-font-p3">Можно перейти в наш телеграм бот и на телеграм канал нашей школы отсканировав QR-code или нажать на него</div></div>   
                         <div class="sb-row sb-m-5-top-minus">  
                         <div class="sb-col_sm-6 sb-col_xs-12 sb-m-5-top  sb-col_lg-6 sb-col_md-6 "><figure class="s-gallery-type-3__item sb-m-clear-bottom">  
-                        <div class="s-gallery-type-3__image-wrapper  sb-m-13-bottom  sb-image-ratio-2x3 "  > <a href="https://t.me/PROEKT10ITGBOT" target="_blank" ><img class="sb-image-crop sb-image-crop_loaded lazy" src="assets/img/05b4df11-0391-4ce9-82ba-7a7356fdc03b.jpg" alt="Изображение"> </div>  
+                        <div class="s-gallery-type-3__image-wrapper  sb-m-13-bottom  sb-image-ratio-2x3 "  > <a href="https://t.me/PROEKT10ITGBOT" target="_blank" ><img class="sb-image-crop sb-image-crop_loaded lazy" src="assets/img/proekttg.png" alt="Изображение"> </div>  
                         <figcaption class="s-gallery-type-3__description sb-text-opacity sb-font-p2"></figcaption></figure></div>  <div class="sb-col_sm-6 sb-col_xs-12 sb-m-5-top  sb-col_lg-6 sb-col_md-6 "><figure class="s-gallery-type-3__item sb-m-clear-bottom">  
-                        <div class="s-gallery-type-3__image-wrapper  sb-m-13-bottom  sb-image-ratio-2x3 "  > <a href="https://t.me/school2090" target="_blank" ><img class="sb-image-crop sb-image-crop_loaded lazy" src="assets/img/1e4bc336-ed51-4fa8-803f-a5163bd626cc.jpg" alt="Изображение"></a> </div>  
+                        <div class="s-gallery-type-3__image-wrapper  sb-m-13-bottom  sb-image-ratio-2x3 "  > <a href="https://t.me/school2090" target="_blank" ><img class="sb-image-crop sb-image-crop_loaded lazy" src="assets/img/proekthk.png" alt="Изображение"></a> </div>  
                             <figcaption class="s-gallery-type-3__description sb-text-opacity sb-font-p2"></figcaption></figure></div>  </div>  </div> </section> <section data-type="contacts-extensible" id="contacts-extensible" class="s-contacts-extensible-type-2 sb-text-dark sb-align-center sb-padding-top_l sb-padding-bottom_l">
                             <link
                             id="contacts-extensible-type-2"
@@ -133,11 +187,12 @@
     window.tbConfig.isModern='noModule'in HTMLScriptElement.prototype;
     (function (){var n,o="chrome"in window,e="InstallTrigger"in window;function t(n){var o=document.createElement("script");return o.src="".concat(window.tbConfig.staticPath,"/js/").concat(n),window.tbConfig.isModern&&(o.type="module",o.src=o.src.replace(".js",".modern.js")),o.defer=!0,o}function d(n){var o=t(n);document.head.appendChild(o)}window.tbConfig.enableLazyLoading&&d("lazy-load.js"),"attachShadow"in Element.prototype||d("lit-polyfill-support.js"),d("webcomponents-loader.js"),o||e||d("smoothscroll.js"),n=t("front.js"),document.addEventListener("DOMContentLoaded",(function(){document.head.appendChild(n)}));})()
 </script>
-
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="assets/styles/size-m.css" />
     <link rel="stylesheet" href="assets/styles/popups.css" />
     <link rel="stylesheet" href="assets/styles/styles-helpers.css" />
 
+    
 
 </body>
 </html>
