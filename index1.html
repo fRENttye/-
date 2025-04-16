@@ -15,10 +15,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:title" content="Главная страница" />
     <meta property="og:description" content="" />
-    <meta property="og:image" content="assets/img/last.png" />
+    <meta property="og:image" content="assets/img/qwerty.jpg" />
     <meta name="twitter:title" content="Главная страница" />
     <meta name="twitter:description" content="" />
-    <meta name="twitter:image" content="assets/img/last.png" />
+    <meta name="twitter:image" content="assets/img/qwerty.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
 
 
@@ -38,41 +38,40 @@
 
         <style>
 .chat-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 300px;
-    max-height: 400px;
-    overflow-y: auto;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    z-index: 1000;
+    display: none; /* Скрываем контейнер по умолчанию */
+    position: fixed; /* Фиксированное позиционирование */
+    bottom: 80px; /* Отступ от нижней части экрана */
+    right: 20px; /* Отступ от правой части экрана */
+    width: 300px; /* Ширина контейнера */
+    border: 1px solid #ccc; /* Граница контейнера */
+    background-color: white; /* Цвет фона контейнера */
+    z-index: 999; /* Устанавливаем z-index ниже, чем у иконки */
 }
+
+.chat-icon {
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed; /* Фиксированное позиционирование */
+    bottom: 20px; /* Отступ от нижней части экрана */
+    right: 20px; /* Отступ от правой части экрана */
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Добавление тени */
+    z-index: 1000; /* Устанавливаем высокий z-index для отображения поверх других элементов */
+}
+
 </style>
 
 </head>
 
 
 
-<body>
-
-   <div class="chat-icon" id="chat-icon">💬</div>
-    <div class="chat-container" id="chat-container">
-        <div class="chat-header">
-            <span>Чат-бот</span>
-            <button id="close-button">✖</button>
-        </div>
-        <div class="chat-box" id="chat-box"></div>
-        <div class="input-container">
-            <input type="text" id="user-input" placeholder="Введите сообщение..." />
-            <button id="send-button">Отправить</button>
-        </div>
-    </div>
-    
-
-    <script src="asdsf.js"></script>
+<body
 
 
 
@@ -84,16 +83,14 @@
 
 
 
-
-
-    <div class="sb-body sb-body_with-footer font-ubuntu-opensans sb-content-size_m sb-buttons-border_round">
+    div class="sb-body sb-body_with-footer font-ubuntu-opensans sb-content-size_m sb-buttons-border_round">
   
 <div class="site-wrapper" tabindex="0">
                <section data-type="main" id="main" class="s-main-type-3 sb-block sb-block_fullscreen s-main-type-3_with-scroll-icon sb-text-white sb-align-center"><link
                             id="main-type-3"
                             rel="stylesheet"
                             href="assets/styles/main-type-3.css"/>
-                            <div class="sb-background-image sb-background sb-background" style="background-image: url(assets/img/last.png);">
+                            <div class="sb-background-image sb-background sb-background" style="background-image: url(assets/img/qwerty.jpg);">
                             <div class="sb-background-overlay" style="opacity: 0.3"></div></div>
                             <div class="sb-container s-main-type-3__container sb-m-clear-top">
                             <div class="sb-row s-main-type-3__top-content  sb-row_center ">
@@ -192,7 +189,27 @@
     <link rel="stylesheet" href="assets/styles/popups.css" />
     <link rel="stylesheet" href="assets/styles/styles-helpers.css" />
 
-    
+    <div class="chat-icon" id="chat-icon">💬</div>
+<div class="chat-container" id="chat-container">
+    <div class="chat-header">
+        <span>Чат-бот</span>
+        <button id="close-button">✖</button>
+    </div>
+    <div class="chat-box" id="chat-box"></div>
+    <div class="preset-messages">
+        <button class="inline-button" data-message="какие функции поддерживает телеграмм бот?">какие функции поддерживает телеграмм бот?</button>
+        <button class="inline-button" data-message="Почему не работают некоторые функции?">Почему не работают некоторые функции?</button>
+        <button class="inline-button" data-message="как найти определенную информацию?">как найти определенную информацию?</button>
+        <button class="inline-button" data-message="как начать работу с ботом?">как начать работу с ботом?</button>
+        <button class="inline-button" data-message="требуется ли подключение к интернету?">требуется ли подключение к интернету?</button>
+        <button class="inline-button" data-message="есть ли ограничения по скорости работы?">есть ли ограничения по скорости работы?</button>
+    </div>
+</div>
+
+    <script src="asdsf.js"></script>
+
+
+
 
 </body>
 </html>

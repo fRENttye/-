@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.chat-icon {
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed; /* Фиксированное позиционирование */
+    bottom: 20px; /* Отступ от нижней части экрана */
+    right: 20px; /* Отступ от правой части экрана */
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Добавление тени */
+    z-index: 1000; /* Устанавливаем высокий z-index для отображения поверх других элементов */
+}
+
+
+ .chat-container {
+    display: none; /* Скрываем контейнер по умолчанию */
+    position: fixed; /* Фиксированное позиционирование */
+    bottom: 80px; /* Отступ от нижней части экрана */
+    right: 20px; /* Отступ от правой части экрана */
+    width: 300px; /* Ширина контейнера */
+    border: 1px solid #ccc; /* Граница контейнера */
+    background-color: white; /* Цвет фона контейнера */
+    z-index: 999; /* Устанавливаем z-index ниже, чем у иконки */
+}
+
+.chat-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+}
+
+.chat-box {
+    height: 300px;
+    overflow-y: auto; /* Прокрутка для чата */
+    padding: 10px; /* Внутренние отступы */
+}
+
+.preset-messages {
+    display: flex; /* Горизонтальное расположение */
+    flex-wrap: wrap; /* Перенос на новую строку при необходимости */
+    background-color: #f0f0f0; /* Светло-черный фон для кнопок */
+    padding: 10px; /* Внутренние отступы для кнопок */
+}
+
+.inline-button {
+    border: none; /* Убираем рамку */
+    background-color: #007bff; /* Цвет фона кнопки */
+    color: white; /* Цвет текста */
+    margin: 5px; /* Отступы между кнопками */
+    padding: 10px 15px; /* Увеличенные внутренние отступы для пышности */
+    cursor: pointer; /* Указатель при наведении */
+    border-radius: 5px; /* Закругленные углы кнопок */
+}
+
+.inline-button:hover {
+    background-color: #0056b3; /* Цвет фона при наведении */
+}
+
+/* Стиль для сообщений пользователя и бота */
+.user-message {
+    background-color: #d4edda; /* Зеленый фон для сообщений пользователя */
+    color: black; /* Черный текст для сообщений пользователя */
+    padding: 10px; /* Внутренние отступы для сообщений пользователя */
+    border-radius: 5px; /* Закругленные углы сообщений пользователя */
+    margin-bottom: 10px; /* Отступ снизу для сообщений пользователя */
+}
+
+.bot-message {
+    background-color: #f8d7da; /* Красный фон для сообщений бота */
+    color: black; /* Черный текст для сообщений бота */
+    padding: 10px; /* Внутренние отступы для сообщений бота */
+    border-radius: 5px; /* Закругленные углы сообщений бота */
+    margin-bottom: 10px; /* Отступ снизу для сообщений бота */
+}
+.user {
+   text-align: right; 
+}
+
+.user .message {
+   background-color: #d1e7dd; /* Цвет сообщения пользователя */
+   padding: 8px; 
+   border-radius: 5px; 
+}
+
+.bot {
+   text-align: left; 
+}
+
+.bot .message {
+   background-color: #f8d7da; /* Цвет сообщения бота */
+   padding: 8px; 
+   border-radius: 5px; 
+}
+
+/* Стиль для "Печатает..." */
+.typing-indicator {
+   font-style: italic;
+   color: gray;
+}
+
+/* Стили для поля ввода и кнопки отправки */
+.input-container {
+   display: flex;
+   align-items: center;
+}
+
+#user-input {
+   flex-grow: 1; /* Занимает оставшееся пространство */
+   padding: 10px;
+   border-radius: 5px;
+   border: 1px solid #ccc;
+   margin-right: 10px; /* Отступ между полем ввода и кнопкой */
+}
+
+#send-button {
+   padding-left :15px ;
+padding-right :15px ;
+padding-top :8px ;
+padding-bottom :8px ;
+border-radius :200 px ; /* Округление краев кнопки отправки */
+border :none ;
+background-color :#007bff ; /* Цвет кнопки */
+color:white ; /* Цвет текста кнопки */
+cursor:pointer ; /* Указатель при наведении */
+transition :background-color .3 s ; /* Плавный переход цвета фона */
+
+}
+#send-button:hover { 
+background-color :#0056b3 ; /* Цвет кнопки при наведении */ 
+}
+
+/* Округление краев крестика в заголовке чата */
+#close-button {
+     background-color :transparent ; /* Прозрачный фон для крестика */ 
+     border :none ; 
+     color:white ; 
+     cursor:pointer ; 
+     border-radius :50 % ; /* Округление краев крестика */ 
+     width :30 px ; /* Ширина крестика */ 
+     height :30 px ; /* Высота крестика */ 
+}
+
